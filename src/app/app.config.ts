@@ -11,9 +11,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), provideFirebaseApp(() => initializeApp({ projectId: "nglegal-c47c1", appId: "1:22759669734:web:157ee0a63049c01f716027", storageBucket: "nglegal-c47c1.firebasestorage.app", apiKey: "AIzaSyCNZq2TzfsxR3NTHDnCYa-cnvnRsrvlosA", authDomain: "nglegal-c47c1.firebaseapp.com", messagingSenderId: "22759669734" })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideServiceWorker('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            registrationStrategy: 'registerWhenStable:30000'
-          })
+    provideRouter(routes),  provideFirebaseApp(() => initializeApp({ projectId: "nglegal-c47c1", appId: "1:22759669734:web:157ee0a63049c01f716027", storageBucket: "nglegal-c47c1.firebasestorage.app", apiKey: "AIzaSyCNZq2TzfsxR3NTHDnCYa-cnvnRsrvlosA", authDomain: "nglegal-c47c1.firebaseapp.com", messagingSenderId: "22759669734" })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore())
   ]
 };

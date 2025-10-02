@@ -7,13 +7,14 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule,CommonModule],
+  imports: [RouterOutlet, RouterModule, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('ng-legal');
-   constructor(public authService: AuthService) { }
+
+  constructor(public authService: AuthService) { }
 
   // Método para confirmar e fazer logout
   confirmLogout() {
