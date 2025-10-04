@@ -18,7 +18,7 @@ export class SeedData {
 
   // IDs de proprietários atuais, disponíveis no Firebase Authentication
   // Edite essa lista conforme o(s) usuário(s) disponível(is) na lista do seu Firebase Authentication
-  private owners = ['eiXTm44Mvwd5xZU75HQtzD5WZrT2', 't3CQISBwVWP0CAFrNMnVfFSXRaK2', '4j2oIn4DlqbS91MDgHr5l0HRwTf2'];
+  private owners = ["8RLhaY4jJDfqdBdXCTO9ckvtOau1"];
 
   // O construtor injeta o serviço do Firestore para ter acesso ao banco de dados.
   constructor(private firestore: Firestore) {

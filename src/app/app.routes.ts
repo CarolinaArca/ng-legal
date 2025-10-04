@@ -4,31 +4,32 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Contacts } from './contacts/contacts';
 import { About } from './about/about';
-import { New } from './new/new';
 import { SeedData } from './seed-data/seed-data';
-import { Component } from '@angular/core';
 import { View } from './view/view';
-import { Title } from '@angular/platform-browser';
+import { SaveThing } from './save-thing/save-thing';
 
 // Nome do site para compor o `title`
-const siteName = "NgLegal";
+const siteName = "NgCRUD";
 
 export const routes: Routes = [
-  // Rotas vazias redirecionam para a `/home` ← Sempre a primeira
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+    // Rotas vazias redirecionam para a `/home` ← Sempre a primeira
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
 
-  // Páginas { rota, componente, título }
-  { path: 'home', component: Home, title: siteName },
-  { path: 'contacts', component: Contacts, title: `${siteName} - Faça Contato` },
-  { path: 'about', component: About, title: `${siteName} - Sobre` },
-  { path: 'new', component: New, title: `${siteName} - Cadastro` },
+    // Páginas { rota, componente, título }
+    { path: 'home', component: Home, title: siteName },
+    { path: 'contacts', component: Contacts, title: `${siteName} - Faça Contato` },
+    { path: 'about', component: About, title: `${siteName} - Sobre` },
 
-  // Página "escondida" que adiciona coisas aleatórias ao Firestore
-  { path: 'seed-data', component: SeedData, title: `${siteName} - Cadastro de Coisas` },
+    // Página para "popular" a coleção "Things" no Firestore
+    { path: 'seed-data', component: SeedData, title: `${siteName} - Cadastro de Coisas` },
 
-  // Página de detalhes do thing
-  { path: 'view/:id', component: View, title: `$ {siteName} - ver Item` },
+    // Página que exibe um item único pelo Id
+    { path: 'view/:id', component: View, title: `${siteName} - Ver Item` },
 
-  // Rota coringa para redirecionar caminhos inválidos ← Sempre a última
-  { path: '**', redirectTo: '/home' }
+    // Editar e apagar um item
+    { path: 'edit/:id', component: SaveThing, title: `${siteName} - Editar Item` }, // Rota para Editar Item
+    { path: 'new', component: SaveThing, title: `${siteName} - Cadastrar Item` }, // Rota para Novo Item
+
+    // Rota coringa para redirecionar caminhos inválidos ← Sempre a última
+    { path: '**', redirectTo: '/home' }
 ];
